@@ -1,0 +1,195 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fonte (mantive sua escolha) */
+body {
+    background-color: #F0EAD6;
+    font-family: Ubuntu, Arial, sans-serif;
+    color: #5C3A21;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* NAVBAR (escopo específico) */
+.navbar {
+    background-color: #6A7F93;
+    padding: 0.5rem 0;
+}
+
+/* Logo */
+.logo-img {
+    max-width: 110px;
+    width: auto;
+    display: block;
+}
+
+/* Somente elementos dentro da navbar ganham cor branca (evita afectar o resto da página) */
+.navbar .nav-link,
+.navbar .navbar-brand,
+.navbar .btn-registrar {
+    color: #fff;
+}
+
+/* Links da navbar */
+.navbar .nav-link {
+    font-weight: 500;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: #C3B37D;
+    text-decoration: none;
+}
+
+/* Botão registrar (usa classes Bootstrap + estilo custom) */
+.btn-registrar {
+    background-color: #C3B37D;
+    color: #A54B3B !important;
+    padding: 8px 18px;
+    margin-left: 0.75rem;
+    border-radius: 50px;
+    font-weight: 700;
+    display: inline-block;
+    border: none;
+    text-decoration: none;
+}
+.btn-registrar:hover,
+.btn-registrar:focus {
+    background-color: #A54B3B;
+    color: #fff !important;
+    transition: 0.25s;
+}
+
+/* Banner Principal */
+.banner {
+    height: 60vh;
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    background-image: url('https://picsum.photos/id/1083/1600/600');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 2rem 0;
+}
+
+.banner::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    left: 0;
+    top: 0;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+.banner-content h1 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+    line-height: 1.1;
+}
+.banner-content p {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Títulos das Seções */
+.titulo-secao {
+    color: #C3B37D;
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilo de cada Card (escopo mantém Bootstrap) */
+.card {
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Mantém sombra sutil */
+.card.h-100 {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Garante que imagens preencham a área sem distorcer */
+.card-img-top {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Textos internos do card */
+.card-body h3 {
+    color: #A54B3B;
+    margin-bottom: 8px;
+    font-size: 1.15rem;
+}
+.card-body p {
+    color: #5C3A21;
+}
+
+/* Botão "Ver Mais" */
+.btn-outline-primary {
+    border-radius: 6px;
+}
+
+/* Eventos e Depoimentos (seções de colunas) - usa Bootstrap grid, aqui refinamento visual */
+.card.p-3 {
+    background-color: #ffffff;
+}
+
+/* Footer */
+.site-footer {
+    background-color: #007BA7;
+    color: #fff;
+    text-align: center;
+    padding: 18px 0;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .card-img-top {
+        height: 200px;
+    }
+    .banner-content h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-img-top {
+        height: 160px;
+    }
+    .banner {
+        height: 45vh;
+    }
+    .banner-content h1 {
+        font-size: 1.5rem;
+    }
+    /* Espaçamento do botão registrar em mobile dentro do collapse */
+    .btn-registrar {
+        width: 100%;
+        text-align: center;
+    }
+}
